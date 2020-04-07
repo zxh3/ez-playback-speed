@@ -1,0 +1,29 @@
+{
+  "name": "Easy Playback Speed Control",
+  "version": "1.1",
+  "description": "Help you control the video playback speed",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.bilibili.com/*",
+        "http://*.fb.workplace.com/*",
+        "https://*.bilibili.com/*",
+        "https://*.fb.workplace.com/*"
+      ],
+      "js": ["content_script.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "http://*.echo360.org/*",
+        "https://*.echo360.org/*"
+      ],
+      "js": ["content_script_echo360.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "manifest_version": 2
+}
